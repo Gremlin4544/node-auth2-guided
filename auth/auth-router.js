@@ -44,7 +44,8 @@ router.post('/login', (req, res) => {
 
 function generateToken(user) {
   const payload = {
-    username: user.username
+    username: user.username,
+    role: user.role || 'user', //the role doesnt exist on the db so just hard coding here
   };
 
   const options = {
